@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*, 
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root {
+
+    /* todo fonts */
+  
+  --font-family: "DM Sans", sans-serif;
+  
+  
+  /* todo size */
+  
+  --font-size: 1.8rem;
+
+  /* todo weight */
+  
+
+   /* todo Colors */
+    /* todo Primary */
+
+    --soft-red: #ec775f;
+    --cyan: #76b5bc;
+
+    /* todo Neutral */
+
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+    --white: #FFFFFF;
+
+
+  }
+  
+a {
+  text-decoration: none;
+  color: var(--soft-red);
+}
+
+a:visited{
+  color: #000000;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  background: var(--cream);
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-color: var(--soft-red);
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  border-radius: 15px;
+  
+  & img{
+    width: 80px;
+  }
+}
+
+
+.text-header{
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  & p:nth-child(1){
+    color: var(--white);
+    font-size: clamp(.8rem, 1vw, 1.8rem);
+    font-weight: 400;
+  }
+  
+  & p:nth-child(2){
+    color: var(--white);
+    font-size: clamp(3.2rem, 1vw, 5rem);
+    font-weight: 600;
+  }
+
+}
+
+.main {
+  background: var(--white);
+  padding: 3.5rem;
+  border-radius: 15px;  
+
+}
+
+.section-barstatus {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2rem;
+}
+
+
+.barstatus--title{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+
+.title-two {
+  color: var(--dark-brown);
+  font-size: clamp(3rem, 1vw, 3.5rem);
+  font-weight: 800;
+
+}
+
+.barstatus {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3; 
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 4rem;
+}
+
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;  /* Ancho fijo para los contenedores de las barras */
+  height: 100%;  /*Altura fija para los contenedores de las barras */
+  position: relative;
+}
+
+.progress-bar {  
+  width: 75%; /* Ancho de la barra de progreso */
+  height: 100%;
+  transform-origin: bottom; /* Establece el origen de la transformación en la parte inferior */
+  border-radius:5px;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.amount {
+  background: var(--dark-brown);
+  color: var(--white);
+  padding: .8rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-family: var(--font-family);
+  position: absolute;
+  transform: translate3d(-50%, 0, 0);
+  width: auto;
+  left: 50%;
+  top: -5rem;
+}
+ 
+
+
+.bar-text {
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
+  color: var(--medium-brown);
+  font-weight: 500;
+  margin-top: 1.2rem;
+}
+
+.divider {
+  border: 1px solid var(--cream);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-expensive {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.expensive-text{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-text {
+  width: 50%;
+  & p:nth-child(1){
+    font-size: clamp(1.2rem, 1vw, 1.7rem);
+    color: var(--medium-brown);
+    font-weight: 400;
+  }
+  & p:nth-child(2){
+    color: var(--dark-brown);
+    font-size: clamp(4.5rem, 1vw, 5rem);
+    font-weight: 700;
+  }  
+}
+
+.rigth-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  & p:nth-child(1){
+    color: var(--dark-brown);
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  & p:nth-child(2){
+    color: var(--medium-brown);
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+.footer{
+  font-size: 1.5rem;
+}
+
+
+
+@media screen and (width > 550px){
+
+  .container{
+    max-width: 550px;
+    margin: auto;
+    margin-top: 10rem;   
+  }
+
+}
