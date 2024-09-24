@@ -25,7 +25,7 @@ If you want to try this app
 1- clone the repository
 
 ```bash
-
+https://github.com/Arirockdev/expenses-chart-component.git
 
 ```
 
